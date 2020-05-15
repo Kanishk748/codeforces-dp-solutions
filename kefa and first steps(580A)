@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long  long 
+
+void solve()
+{
+	int n;cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++)cin>>a[i];
+	int maxlen = -1,cursize=1;
+	for(int i=0;i<n-1;i++)
+	{
+		if(a[i+1]>=a[i])cursize++;
+		else
+		{
+			maxlen = max(maxlen,cursize);
+			cursize=1;
+		}
+		
+	}
+	cout<<max(maxlen,cursize)<<"\n";
+}
+
+int main()
+{
+	solve();
+	return 0;
+}
